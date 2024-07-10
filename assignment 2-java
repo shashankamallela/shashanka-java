@@ -1,0 +1,286 @@
+1.multiply of two matrices 
+code: 
+    import java.io.*;
+ class multiply{
+    static int n=2;
+    static void multiply(int m1[][],int m2[][],int r[][]){
+         int i,j,k;
+         for(i=0;i<n;i++){
+             for(j=0;j<n;j++){
+                 r[i][j]=0;
+                 for(k=0;k<n;k++){
+                     res[i][j]+=m1[i][k]*m2[k][j];
+                 }
+             }
+  }
+    public static void main(String[] args){
+             int m1[][]={{1,2},{2,3}};
+             int m2[][]={{2,3},{3,4}};
+             int r[][]=new int[N][N];
+             multiply(m1,m2,r);
+             System.out.println("result matrix"+"is");
+             int i,j;
+              for (i=0;i<n;i++){
+                  for (j=0;j<n;j++){
+                      System.out.println(r[i][j]);
+                       System.out.println();
+                  }
+              }
+         }
+     
+}
+
+
+
+
+2. adding of two matrices
+code:
+    public class add{
+public static void main(String[] args){
+int m1[][]={{1,2,3},{2,3,4},{4,5,6}};
+int m2[][]={{2,3,4},{6,6,8},{7,8,9}};
+int c[][]=new  int[3][3];
+for(int i=0;i<3;i++){
+    for(int j=0;j<3;j++){
+     c[i][j]=m1[i][j]+m2[i][j];
+    System.out.println(c[i][j] +" ");
+    }
+    System.out.println();
+}
+
+
+3.merging  two sorted arrays
+code:
+  import  java.util.Arrays;
+ public class merge{
+     public static void main(String[] args){
+         int[] a={12,34,56};
+         int[] b={23,45,67};
+         int a1=a.length;
+         int b1=b.length;
+         int c1=a1+b1;
+         int[] c=new int[c1];
+         System.arraycopy(a,0,c,0,a1);
+         System.arraycopy(b,0,c,a1,b1);
+         System.out.println(Arrays.toString(c));
+     }
+ }
+    
+}
+}
+
+
+
+
+
+4. mean,median and mode of the array
+ code:
+       import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+public class Statistics {
+    public static void main(String[] args) {
+        int[] numbers = {1, 2, 2, 3, 4, 4, 4, 5, 5, 6};
+        double mean = calculateMean(numbers);
+        double median = calculateMedian(numbers);
+        int mode = calculateMode(numbers);
+        System.out.println("Mean: " + mean);
+        System.out.println("Median: " + median);
+        System.out.println("Mode: " + mode);
+    }
+    public static double calculateMean(int[] numbers) {
+        double sum = 0;
+        for (int number : numbers) {
+            sum += number;
+        }
+        return sum / numbers.length;
+    }
+    public static double calculateMedian(int[] numbers) {
+        Arrays.sort(numbers);
+        int middle = numbers.length / 2;
+        if (numbers.length % 2 == 0) {
+            return (numbers[middle - 1] + numbers[middle]) / 2.0;
+        } else {
+            return numbers[middle];
+        }
+    }
+    public static int calculateMode(int[] numbers) {
+        Map<Integer, Integer> frequencyMap = new HashMap<>();
+        for (int number : numbers) {
+            frequencyMap.put(number, frequencyMap.getOrDefault(number, 0) + 1);
+        }
+        int mode = numbers[0];
+        int maxCount = 0;
+        for (Map.Entry<Integer, Integer> entry : frequencyMap.entrySet()) {
+            if (entry.getValue() > maxCount) {
+                maxCount = entry.getValue();
+                mode = entry.getKey();
+            }
+        }
+        return mode;
+    }
+
+
+
+
+
+
+5. composite numbers in the array
+ code:
+            public class CompositeNumbers {
+    public static void main(String[] args) {
+        int[] numbers = {4, 5, 6, 7, 8, 9, 10, 11, 12};
+        int compositeCount = countCompositeNumbers(numbers);
+        System.out.println("Number of composite numbers: " + compositeCount);
+    }
+    public static boolean isComposite(int number) {
+        if (number <= 1) return false;
+        if (number <= 3) return false; 
+        for (int i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i == 0) {
+                return true;
+            }
+        }
+        return false;
+    }
+    public static int countCompositeNumbers(int[] numbers) {
+        int count = 0;
+        for (int number : numbers) {
+            if (isComposite(number)) {
+                count++;
+            }
+        }
+        return count;
+    }
+}
+
+
+
+
+6.print right triangle
+  code:
+     import java.util.Scanner;
+public class RightTriangleStarPattern {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of rows for the right triangle: ");
+        int rows = scanner.nextInt();
+        for (int i = 1; i <= rows; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+
+        scanner.close();
+    }
+}
+
+
+7.pascal triangle
+code:
+     public class PascalTriangle {
+    public static void main(String[] args) {
+        int numberOfRows = 5;
+        printPascalTriangle(numberOfRows);
+    }
+    public static void printPascalTriangle(int numberOfRows) {
+        int[][] triangle = new int[numberOfRows][numberOfRows];
+        for (int i = 0; i < numberOfRows; i++) {
+            for (int j = 0; j < numberOfRows - i - 1; j++) {
+                System.out.print("  ");
+            }
+            for (int j = 0; j <= i; j++) {
+                if (j == 0 || j == i) {
+                    triangle[i][j] = 1;
+                } else {
+                    triangle[i][j] = triangle[i - 1][j - 1] + triangle[i - 1][j];
+                }
+                System.out.print(triangle[i][j] + "   ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+
+
+8.rectangle pattern
+code:
+   import java.util.Scanner;
+public class RectanglePattern {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the symbol to use for the rectangle: ");
+        char symbol = scanner.next().charAt(0);
+        System.out.print("Enter the number of rows: ");
+        int rows = scanner.nextInt();
+        System.out.print("Enter the number of columns: ");
+        int columns = scanner.nextInt();
+        printRectanglePattern(symbol, rows, columns);
+    }
+    public static void printRectanglePattern(char symbol, int rows, int columns) {
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                System.out.print(symbol + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+
+
+10.inverted full pyramid
+code:
+    public class InvertedFullPyramid {
+    public static void main(String[] args) {
+        int numberOfRows = 5;
+        printInvertedPyramidPattern(numberOfRows);
+    }
+    public static void printInvertedPyramidPattern(int numberOfRows) {
+        for (int i = numberOfRows; i >= 1; i--) {
+            for (int j = 0; j < numberOfRows - i; j++) {
+                System.out.print(" ");
+            }
+            for (int k = 0; k < 2 * i - 1; k++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+9.half diamond with 1
+ code:
+    import java.util.*; 
+class GFG{  
+static void halfDiamondStar(int N) 
+{ 
+	int i, j;  
+	for (i = 0; i < N; i++) 
+	{ 
+		for (j = 0; j < i + 1; j++) 
+			System.out.print("1"); 
+		System.out.print("\n"); 
+	} 
+	for (i = 1; i < N; i++) 
+	{ 
+		for (j = i; j < N; j++) 
+			System.out.print("1"); 
+		System.out.print("\n"); 
+	} 
+}  
+public static void main(String[] args) 
+{ 
+	int N = 5;  
+	halfDiamondStar(N); 
+} 
+}
+
+
+
+
