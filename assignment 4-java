@@ -1,0 +1,268 @@
+1.lcd and gcd
+ code:
+   import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        int num1 = input.nextInt();
+
+        System.out.print("Enter second number: ");
+        int num2 = input.nextInt();
+
+        int gcd = findGCD(num1, num2);
+        int lcm = (num1 * num2) / gcd;
+
+        System.out.println("GCD of " + num1 + " and " + num2 + " is: " + gcd);
+        System.out.println("LCM of " + num1 + " and " + num2 + " is: " + lcm);
+    }
+
+    public static int findGCD(int a, int b) {
+        if (b == 0) {
+            return a;
+        }
+        return findGCD(b, a % b);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+2. simple interest
+ code:
+   public class SimpleInterestCalculator {
+    public static void main(String[] args) {
+        double principal = 200000;
+        int years = 3;
+        char isSeniorCitizen = 'n';
+        double rateOfInterest = (isSeniorCitizen == 'y') ? 0.12 : 0.10;
+        double simpleInterest = (principal * rateOfInterest * years);
+        System.out.println("Simple Interest: " + simpleInterest);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+3.fibonacci series
+  code:
+  import java.io.*;
+class main {
+    static void Fibonacci(int N)
+    {
+        int num1 = 0, num2 = 1;
+        for (int i = 0; i < N; i++) {
+            System.out.print(num1 + " ");
+            int num3 = num2 + num1;
+            num1 = num2;
+            num2 = num3;
+        }
+    }
+    public static void main(String args[])
+    {
+        int N = 10;
+        Fibonacci(N);
+    }
+
+
+
+
+
+
+
+
+4. even sum fibonacci series
+  code:
+   import java.io.*;
+class evensumfibonnaci {
+	static int Fib_Even_Sum(int N)
+	{
+		if (N <= 0)
+			return 0;
+int fib[] = new int[2 * N + 1];
+		fib[0] = 0;
+		fib[1] = 1;
+		int s = 0;
+		for (int j = 2; j <= 2 * N; j++) {
+			fib[j] = fib[j - 1] + fib[j - 2];
+			if (j % 2 == 0)
+				s += fib[j];
+		}
+return s;
+	}
+	public static void main(String[] args)
+	{
+		int N = 11;
+		System.out.println(
+			"Even sum of fibonacci series till number " + N
+			+ " is: " + +Fib_Even_Sum(N));
+	}
+}
+
+
+
+
+
+
+
+
+5.skip numbers
+ code:
+   public class SkipNumbers {
+    public static void main(String[] args) {
+        int M = 50;
+        int N = 100;
+        int K = 7;
+
+        for (int i = M; i <= N; i += (K + 1)) {
+            System.out.println(i);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+6.composite m to n
+  code:
+ public class CompositeNumbers {
+    
+    public static boolean isComposite(int num) {
+        if (num < 4) return false; // Composite numbers start from 4
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        int A = 12;
+        int B = 19;
+
+        for (int i = A; i <= B; i++) {
+            if (isComposite(i)) {
+                System.out.print(i + " ");
+            }
+        }
+    }
+}
+
+
+
+
+7.factorial of n
+code:
+ class FactorialExample{  
+ public static void main(String args[]){  
+  int i,fact=1;  
+  int number=5;    
+  for(i=1;i<=number;i++){    
+      fact=fact*i;    
+  }    
+  System.out.println("Factorial of "+number+" is: "+fact);    
+ }  
+}  
+
+
+
+
+
+
+
+8.leap year or not
+ code:
+public class Main {
+  public static void main(String[] args) {
+    int year = 1900;
+    boolean leap = false;
+    if (year % 4 == 0) {
+      if (year % 100 == 0) {
+        if (year % 400 == 0)
+          leap = true;
+        else
+          leap = false;
+      }
+      else
+        leap = true;
+    }
+    else
+      leap = false;
+    if (leap)
+      System.out.println(year + " is a leap year.");
+    else
+      System.out.println(year + " is not a leap year.");
+  }
+}
+
+
+
+
+
+
+
+9.factors of n
+code:
+public class Main {
+  public static void main(String[] args) {
+    int number = 60;
+    System.out.print("Factors of " + number + " are: ");
+    for (int i = 1; i <= number; ++i) {
+      if (number % i == 0) {
+        System.out.print(i + " ");
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+10.perfect  number
+ code:
+public class PerfectNumber {
+    public static void main(String[] args) {
+        int givenNumber = 6;
+        int sum = 0;
+        
+        for (int i = 1; i < givenNumber; i++) {
+            if (givenNumber % i == 0) {
+                sum += i;
+            }
+        }
+        
+        if (sum == givenNumber) {
+            System.out.println("Its a Perfect Number");
+        } else {
+            System.out.println("Its not a Perfect Number");
+        }
+    }
+}
