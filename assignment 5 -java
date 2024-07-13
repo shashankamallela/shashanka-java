@@ -1,0 +1,566 @@
+1.cube and square of decimal number 
+code:
+   import java.util.*;
+public class j5 {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int num;
+System.out.print("Enter an integer number: ");
+        num = sc.nextInt();
+System.out.println("Square of " + num + " is: " + Math.pow(num, 2));
+        System.out.println("Cube of " + num + " is: " + Math.pow(num, 3));
+        System.out.println("Square Root of " + num + " is: " + Math.sqrt(num));
+    }
+}
+
+
+
+
+
+
+
+
+
+
+2.find frequency of number
+ code:
+public class Frequency {  
+    public static void main(String[] args) {  
+        int [] arr = new int [] {1, 2, 8, 3, 2, 2, 2, 5, 1};     
+        int [] fr = new int [arr.length];  
+        int visited = -1;  
+        for(int i = 0; i < arr.length; i++){  
+            int count = 1;  
+            for(int j = i+1; j < arr.length; j++){  
+                if(arr[i] == arr[j]){  
+                    count++;  
+                    fr[j] = visited;  
+                }  
+            }  
+            if(fr[i] != visited)  
+                fr[i] = count;  
+        }    
+        System.out.println("---------------------");  
+        System.out.println(" Element | Frequency");  
+        System.out.println("---------------------");  
+        for(int i = 0; i < fr.length; i++){  
+            if(fr[i] != visited)  
+                System.out.println("   " + arr[i] + " | " + fr[i]);  
+        }  
+        System.out.println("---------------------");  
+    }  
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3.armstrong number
+code:
+public class Armstrong {
+public static void main(String[] args) {
+int number = 371, originalNumber, remainder, result = 0;
+originalNumber = number;
+while (originalNumber != 0)
+        {
+            remainder = originalNumber % 10;
+            result += Math.pow(remainder, 3);
+            originalNumber /= 10;
+        }
+if(result == number)
+            System.out.println(number + " is an Armstrong number.");
+        else
+            System.out.println(number + " is not an Armstrong number.");
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+4.sum of digits of n digits
+code:
+import java.io.*;
+class GFG {
+	static int getSum(int n)
+	{ 
+		int sum = 0;
+		while (n != 0)
+		{
+			sum = sum + n % 10;
+			n = n/10;
+		}
+	return sum;
+	}
+	public static void main(String[] args)
+	{
+		int n = 687;
+		System.out.println(getSum(n));
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5.perfect square
+code:
+import java.util.Scanner;  
+public class CheckPerfectSquareExample4  
+{  
+public static void main(String[] args)  
+{  
+Scanner sc = new Scanner(System.in);  
+System.out.print("Enter a number: "); 
+int number = sc.nextInt();     
+double x = Math.sqrt(number);   
+if(x == (int)x)  
+{  
+System.out.println(number+" is a perfect square.");  
+}  
+else  
+{  
+System.out.println(number+" is not a perfect square.");  
+}  
+}  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6.power of three
+code:
+ import java.io.*;
+class powerthree{
+    public static void main(String[] args)
+    {
+        int b = 81;
+        int a = 3;
+        double p = Math.log10(b)/ Math.log10(a); 
+        if (p - (int)p == 0) {
+            System.out.println("YES");
+        }
+        else
+            System.out.println("NO");
+    }
+}
+
+
+
+
+
+
+7.most frequent word
+code:
+import java.io.*;
+class GFG
+{
+  static void mostFrequentWord(String arr[], int n)
+  {
+    int freq = 0;
+    String res = "";
+    for (int i = 0; i < n; i++) {
+      int count = 0;
+      for (int j = i + 1; j < n; j++) {
+        if (arr[j].equals(arr[i])) {
+          count++;
+        }
+      }
+      if (count >= freq) {
+        res = arr[i];
+        freq = count;
+      }
+    }
+
+    System.out.println("The word that occurs most is : " + res);
+    System.out.println("No of times: " + freq);
+  }
+
+  public static void main (String[] args) 
+  {
+    String arr[] = { "geeks",   "for",   "geeks", "a",    "portal",
+                    "to",      "learn", "can",   "be",   "computer",
+                    "science", "zoom",  "yup",   "fire", "in",
+                    "be",      "data",  "geeks" };
+    int n = arr.length;
+    mostFrequentWord(arr, n);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+10.sub array 
+code:
+import java.util.Arrays;
+public class Main {
+    public static void maxSubArraySum(int[] a) {
+        int size = a.length;
+        int[] dp = new int[size]; 
+        dp[0] = a[0];
+        int ans = dp[0];
+        for (int i = 1; i < size; i++) {
+            dp[i] = Math.max(a[i], a[i] + dp[i - 1]);
+            ans = Math.max(ans, dp[i]);
+        }
+        System.out.println(ans);
+    }
+public static void main(String[] args) {
+        int[] a = { -2, -3, 4, -1, -2, 1, 5, -3 };
+        maxSubArraySum(a);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+   1.cube and square of decimal number 
+code:
+   import java.util.*;
+public class j5 {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int num;
+System.out.print("Enter an integer number: ");
+        num = sc.nextInt();
+System.out.println("Square of " + num + " is: " + Math.pow(num, 2));
+        System.out.println("Cube of " + num + " is: " + Math.pow(num, 3));
+        System.out.println("Square Root of " + num + " is: " + Math.sqrt(num));
+    }
+}
+
+
+
+
+
+
+
+
+
+
+2.find frequency of number
+ code:
+public class Frequency {  
+    public static void main(String[] args) {  
+        int [] arr = new int [] {1, 2, 8, 3, 2, 2, 2, 5, 1};     
+        int [] fr = new int [arr.length];  
+        int visited = -1;  
+        for(int i = 0; i < arr.length; i++){  
+            int count = 1;  
+            for(int j = i+1; j < arr.length; j++){  
+                if(arr[i] == arr[j]){  
+                    count++;  
+                    fr[j] = visited;  
+                }  
+            }  
+            if(fr[i] != visited)  
+                fr[i] = count;  
+        }    
+        System.out.println("---------------------");  
+        System.out.println(" Element | Frequency");  
+        System.out.println("---------------------");  
+        for(int i = 0; i < fr.length; i++){  
+            if(fr[i] != visited)  
+                System.out.println("   " + arr[i] + " | " + fr[i]);  
+        }  
+        System.out.println("---------------------");  
+    }  
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3.armstrong number
+code:
+public class Armstrong {
+public static void main(String[] args) {
+int number = 371, originalNumber, remainder, result = 0;
+originalNumber = number;
+while (originalNumber != 0)
+        {
+            remainder = originalNumber % 10;
+            result += Math.pow(remainder, 3);
+            originalNumber /= 10;
+        }
+if(result == number)
+            System.out.println(number + " is an Armstrong number.");
+        else
+            System.out.println(number + " is not an Armstrong number.");
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+4.sum of digits of n digits
+code:
+import java.io.*;
+class GFG {
+	static int getSum(int n)
+	{ 
+		int sum = 0;
+		while (n != 0)
+		{
+			sum = sum + n % 10;
+			n = n/10;
+		}
+	return sum;
+	}
+	public static void main(String[] args)
+	{
+		int n = 687;
+		System.out.println(getSum(n));
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5.perfect square
+code:
+import java.util.Scanner;  
+public class CheckPerfectSquareExample4  
+{  
+public static void main(String[] args)  
+{  
+Scanner sc = new Scanner(System.in);  
+System.out.print("Enter a number: "); 
+int number = sc.nextInt();     
+double x = Math.sqrt(number);   
+if(x == (int)x)  
+{  
+System.out.println(number+" is a perfect square.");  
+}  
+else  
+{  
+System.out.println(number+" is not a perfect square.");  
+}  
+}  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6.power of three
+code:
+ import java.io.*;
+class powerthree{
+    public static void main(String[] args)
+    {
+        int b = 81;
+        int a = 3;
+        double p = Math.log10(b)/ Math.log10(a); 
+        if (p - (int)p == 0) {
+            System.out.println("YES");
+        }
+        else
+            System.out.println("NO");
+    }
+}
+
+
+
+
+
+
+7.most frequent word
+code:
+import java.io.*;
+class GFG
+{
+  static void mostFrequentWord(String arr[], int n)
+  {
+    int freq = 0;
+    String res = "";
+    for (int i = 0; i < n; i++) {
+      int count = 0;
+      for (int j = i + 1; j < n; j++) {
+        if (arr[j].equals(arr[i])) {
+          count++;
+        }
+      }
+      if (count >= freq) {
+        res = arr[i];
+        freq = count;
+      }
+    }
+
+    System.out.println("The word that occurs most is : " + res);
+    System.out.println("No of times: " + freq);
+  }
+
+  public static void main (String[] args) 
+  {
+    String arr[] = { "geeks",   "for",   "geeks", "a",    "portal",
+                    "to",      "learn", "can",   "be",   "computer",
+                    "science", "zoom",  "yup",   "fire", "in",
+                    "be",      "data",  "geeks" };
+    int n = arr.length;
+    mostFrequentWord(arr, n);
+  }
+}
+
+
+
+
+
+
+8.duplicate element
+code:
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {1, 0, 2, 3, 0, 4, 5, 0};
+        duplicateZeros(arr);
+        System.out.println(Arrays.toString(arr));
+    }
+
+    static void duplicateZeros(int[] arr) {
+        int n = arr.length, zeros = 0;
+        for (int num : arr) if (num == 0) zeros++;
+        for (int i = n - 1; i >= 0; i--) {
+            if (i + zeros < n) arr[i + zeros] = arr[i];
+            if (arr[i] == 0 && --zeros + i < n) arr[i + zeros] = 0;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+9.public class Main {
+    public static void main(String[] args) {
+        int[] nums = {3, 0, 1};
+        System.out.println(missingNumber(nums));
+    }
+
+    static int missingNumber(int[] nums) {
+        int sum = 0, n = nums.length;
+        for (int num : nums) sum += num;
+        return n * (n + 1) / 2 - sum;
+    }
+}
+
+
+
+
+
+
+
+
+
+10.sub array 
+code:
+import java.util.Arrays;
+public class Main {
+    public static void maxSubArraySum(int[] a) {
+        int size = a.length;
+        int[] dp = new int[size]; 
+        dp[0] = a[0];
+        int ans = dp[0];
+        for (int i = 1; i < size; i++) {
+            dp[i] = Math.max(a[i], a[i] + dp[i - 1]);
+            ans = Math.max(ans, dp[i]);
+        }
+        System.out.println(ans);
+    }
+public static void main(String[] args) {
+        int[] a = { -2, -3, 4, -1, -2, 1, 5, -3 };
+        maxSubArraySum(a);
+    }
+}
