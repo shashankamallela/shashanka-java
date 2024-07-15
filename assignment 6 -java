@@ -1,0 +1,347 @@
+1.multiplication table
+code:
+class GFG {
+	public static void main(String[] args)
+	{
+		int N = 7;
+		for (int i = 1; i <= 10; i++) {.
+			System.out.println(N + " * " + i + " = " + N * i);
+		}
+	}
+}
+
+
+
+
+
+
+2.multiple threads
+code:
+class MultithreadingDemo extends Thread {
+	public void run()
+	{
+		try {
+			System.out.println(
+				"Thread " + Thread.currentThread().getId()
+				+ " is running");
+		}
+		catch (Exception e) {
+			System.out.println("Exception is caught");
+		}
+	}
+}
+public class Multithread {
+	public static void main(String[] args)
+	{
+		int n = 8; // Number of threads
+		for (int i = 0; i < n; i++) {
+			MultithreadingDemo object	= new MultithreadingDemo();
+			object.start();
+		}
+	}
+}
+
+
+
+
+
+3.java implements
+code:
+import java.util.Scanner;
+
+public class MenuSelection {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int choice;
+
+        do {
+            System.out.println("\nMenu:");
+            System.out.println("1. if statement");
+            System.out.println("2. switch statement");
+            System.out.println("3. for loop");
+            System.out.println("4. while loop");
+            System.out.println("5. do-while loop");
+            System.out.println("6. Exit");
+            System.out.print("Enter your choice: ");
+            choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.println("\nSyntax of if statement:");
+                    System.out.println("if (condition) {");
+                    System.out.println("    // code to be executed if condition is true");
+                    System.out.println("} else {");
+                    System.out.println("    // code to be executed if condition is false");
+                    System.out.println("}");
+                    break;
+
+                case 2:
+                    System.out.println("\nSyntax of switch statement:");
+                    System.out.println("switch (expression) {");
+                    System.out.println("    case value1:");
+                    System.out.println("        // code to be executed if expression equals value1");
+                    System.out.println("        break;");
+                    System.out.println("    case value2:");
+                    System.out.println("        // code to be executed if expression equals value2");
+                    System.out.println("        break;");
+                    System.out.println("    // more cases...");
+                    System.out.println("    default:");
+                    System.out.println("        // code to be executed if expression doesn't match any case");
+                    System.out.println("}");
+                    break;
+
+                case 3:
+                    System.out.println("\nSyntax of for loop:");
+                    System.out.println("for (initialization; condition; increment/decrement) {");
+                    System.out.println("    // code to be executed in each iteration");
+                    System.out.println("}");
+                    break;
+
+                case 4:
+                    System.out.println("\nSyntax of while loop:");
+                    System.out.println("while (condition) {");
+                    System.out.println("    // code to be executed as long as condition is true");
+                    System.out.println("}");
+                    break;
+
+                case 5:
+                    System.out.println("\nSyntax of do-while loop:");
+                    System.out.println("do {");
+                    System.out.println("    // code to be executed at least once and repeatedly until condition is false");
+                    System.out.println("} while (condition);");
+                    break;
+case 6:
+                    System.out.println("Exiting the menu. Goodbye!");
+                    break;
+default:
+                    System.out.println("Invalid choice. Please select a valid option.");
+                    break;
+            }
+        } while (choice != 6);
+
+        scanner.close();
+    }
+}
+
+
+
+
+
+
+
+
+4.generic sorted
+code:
+import java.util.Arrays;
+import java.util.Comparator;
+
+public class GenericSorter<T> {
+    private T[] array;
+
+    public GenericSorter(T[] array) {
+        this.array = array;
+    }
+
+    public void sort(Comparator<? super T> comparator) {
+        Arrays.sort(array, comparator);
+    }
+
+    public T[] getSortedArray() {
+        return array;
+    }
+
+    public static void main(String[] args) {
+        Integer[] intArray = {5, 3, 8, 1, 2};
+        GenericSorter<Integer> intSorter = new GenericSorter<>(intArray);
+        intSorter.sort(Comparator.naturalOrder());
+        System.out.println(Arrays.toString(intSorter.getSortedArray()));
+
+        String[] stringArray = {"banana", "apple", "orange"};
+        GenericSorter<String> stringSorter = new GenericSorter<>(stringArray);
+        stringSorter.sort(Comparator.naturalOrder());
+        System.out.println(Arrays.toString(stringSorter.getSortedArray()));
+    }
+}
+
+
+
+
+
+
+5.overload in java
+code:public class Sum { 
+	public int sum(int x, int y) { return (x + y); }  
+	public int sum(int x, int y, int z) 
+	{ 
+		return (x + y + z); 
+	}  
+	public double sum(double x, double y) 
+	{ 
+		return (x + y); 
+	}  
+	public static void main(String args[]) 
+	{ 
+		Sum s = new Sum(); 
+		System.out.println(s.sum(10, 20)); 
+		System.out.println(s.sum(10, 20, 30)); 
+		System.out.println(s.sum(10.5, 20.5)); 
+	} 
+}
+
+
+
+
+
+
+
+
+
+6.hash map
+code:
+import java.lang.*;
+import java.util.*;
+ public class GFG {
+    public static HashMap<String, Integer>
+    sortByValue(HashMap<String, Integer> hm)
+    {
+        List<Map.Entry<String, Integer> > list
+            = new LinkedList<Map.Entry<String, Integer> >(
+                hm.entrySet());
+        Collections.sort(
+            list,
+            new Comparator<Map.Entry<String, Integer> >() {
+                public int compare(
+                    Map.Entry<String, Integer> object1,
+                    Map.Entry<String, Integer> object2)
+                {
+                    return (object1.getValue())
+                        .compareTo(object2.getValue());
+                }
+            });
+        HashMap<String, Integer> result= new LinkedHashMap<String, Integer>();
+        for (Map.Entry<String, Integer> me : list) {
+            result.put(me.getKey(), me.getValue());
+        }
+        return result;
+    }
+    public static void main(String[] args)
+    {
+        HashMap<String, Integer> hashmap= new HashMap<String, Integer>();
+        hashmap.put("five", 5);
+        hashmap.put("seven", 7);
+        hashmap.put("three", 3);
+        hashmap.put("nine", 9);
+        hashmap.put("zero", 0);
+        hashmap.put("eight", 8);
+        Map<String, Integer> map = sortByValue(hashmap)
+        for (Map.Entry<String, Integer> entry :
+             map.entrySet()) {
+            System.out.println("Key : " + entry.getKey()
+                               + ", Value : "
+                               + entry.getValue());
+        }
+    }
+}
+
+
+
+
+
+
+
+
+8.count word
+code:
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+public class WordCounter {
+public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter your string:");
+        String input = scanner.nextLine();
+Map<String, Integer> wordCounts = countWords(input);
+System.out.println("Occurrences of each word:");
+        for (Map.Entry<String, Integer> entry : wordCounts.entrySet()) {
+            System.out.println(entry.getKey() + ": " + entry.getValue());
+        }
+    }
+public static Map<String, Integer> countWords(String input) {
+        Map<String, Integer> wordCountMap = new HashMap<>();
+String[] words = input.split("\\s+");
+for (String word : words) {
+            word = word.toLowerCase();
+            wordCountMap.put(word, wordCountMap.getOrDefault(word, 0) + 1);
+        }
+return wordCountMap;
+    }
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9.distinct character
+code:
+import java.util.*;
+
+class distinct{
+public static void main(String[] args)
+{
+    String str = "helloworld";
+ for (int i = 0; i < str.length(); i++)
+    {
+        int flag = 0;
+        for (int j = 0; j < str.length(); j++)
+        {
+            if (str.charAt(i) == str.charAt(j) && i != j) 
+            {
+                flag = 1;
+                break;
+            }
+        }
+        if (flag == 0)
+            System.out.print(str.charAt(i));
+    }
+}
+} 
+
+
+
+
+
+10.unique character
+code:
+import java.util.HashMap;
+public class UniqueCharacters {
+    public static void main(String[] args) {
+        String input = "abcb";
+        printUniqueCharacters(input);
+    }
+public static void printUniqueCharacters(String str) {
+        HashMap<Character, Integer> charCount = new HashMap<>();
+        for (char c : str.toCharArray()) {
+            charCount.put(c, charCount.getOrDefault(c, 0) + 1);
+        }
+        for (char c : str.toCharArray()) {
+            if (charCount.get(c) == 1) {
+                System.out.print(c + " ");
+            }
+        }
+    }
+} 
+
