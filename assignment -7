@@ -1,0 +1,127 @@
+1.
+public class PrimeCompositeCounter {
+    public static void main(String[] args) {
+        int[] arr = {2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int primeCount = 0;
+        int compositeCount = 0;
+        for (int num : arr) {
+            if (isPrime(num)) {
+                primeCount++;
+            } else {
+                compositeCount++;
+            }
+        }
+        System.out.println("Prime count: " + primeCount);
+        System.out.println("Composite count: " + compositeCount);
+    }
+    public static boolean isPrime(int num) {
+        if (num <= 1) {
+            return false; 
+        }
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                return false; 
+            }
+        }
+        return true; 
+    }
+}
+
+
+
+
+
+
+2.
+import java.util.Arrays;
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {12, 3, 45, 6, 89, 23, 11};
+        int m = 3; 
+        int n = 2;
+        Arrays.sort(arr); 
+        int mthMax = arr[arr.length - m];
+        int nthMin = arr[n - 1]; 
+        System.out.println("mth Max: " + mthMax);
+        System.out.println("nth Min: " + nthMin);
+    }
+}
+
+
+
+
+
+3.
+import java.util.Scanner;
+public class ATM {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int[] denominations = new int[4];
+        int[] notes = new int[4];
+        for (int i = 0; i < 4; i++) {
+            System.out.printf("Enter the %dth Denomination: ", i + 1);
+            denominations[i] = scanner.nextInt();
+            System.out.printf("Enter the %dth Denomination number of notes: ",+1 );
+            notes[i] = scanner.nextInt();
+        }
+        long totalAmount = 0;
+        for (int i = 0; i < 4; i++) {
+            totalAmount += denominations[i] * notes[i];
+        }
+        System.out.println("Total amount available in the ATM: " + totalAmount);
+    }
+}
+
+
+
+
+
+
+
+4.
+public class PalindromeChecker {
+    public static void main(String[] args) {
+        String str = "shahs"; // or "12321"
+        System.out.println(isPalindrome(str) ? "Yes, it's a palindrome" : "No, it's not a palindrome");
+    }
+    public static boolean isPalindrome(String str) {
+        int left = 0;
+        int right = str.length() - 1;
+        while (left < right) {
+            if (str.charAt(left) != str.charAt(right)) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
+    }
+
+
+
+
+
+
+
+5.
+public class DecimalToBinaryOctal {
+    public static void main(String[] args) {
+        int decimal = 15; 
+        String binary = Integer.toBinaryString(decimal);
+        String octal = Integer.toOctalString(decimal);
+        System.out.println("Decimal: " + decimal);
+        System.out.println("Binary: " + binary);
+        System.out.println("Octal: " + octal);
+    }
+}
+
+
+5.
+}
+
+
+
+4.
+
+
+
