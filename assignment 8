@@ -1,0 +1,166 @@
+1.
+import java.util.Scanner;
+public class BonusCalculator {
+ public static void main(String[] args) {
+ Scanner input = new Scanner(System.in);
+ System.out.print("Enter the grade of the employee: ");
+ char grade = input.next().charAt(0);
+ System.out.print("Enter the employee salary: ");
+ double salary = input.nextDouble();
+ double bonus = 0;
+ if (salary < 10000) {
+ bonus = salary * 0.02;
+ } else {
+ if (grade == 'A') {
+ bonus = salary * 0.05;
+ } else if (grade == 'B') {
+ bonus = salary * 0.10;
+ }
+ }
+ double totalSalary = salary + bonus;
+ System.out.println("Salary=" + salary);
+ System.out.println("Bonus=" + bonus);
+ System.out.println("Total to be paid:" + totalSalary);
+ }
+}
+
+
+
+2.
+public class PerfectNumbers {
+ public static void main(String[] args) {
+ int n = 3;
+ int count = 0;
+ int num = 1;
+ System.out.print("First " + n + " perfect numbers are: ");
+ while (count < n) {
+ if (isPerfectNumber(num)) {
+ System.out.print(num + " ");
+ count++;
+ }
+ num++;
+ }
+ }
+ public static boolean isPerfectNumber(int number) {
+ int sum = 0;
+ for (int i = 1; i < number; i++) {
+ if (number % i == 0) {
+ sum += i;
+ }
+ }
+ return sum == number;
+ }
+}
+
+
+
+
+
+3.
+import java.util.Scanner;
+public class StudentGrades {
+ public static void main(String[] args) {
+ Scanner input = new Scanner(System.in);
+ System.out.print("Enter the marks in Python: ");
+ int python = input.nextInt();
+ System.out.print("Enter the marks in C Programming: ");
+ int cProgramming = input.nextInt();
+ System.out.print("Enter the marks in Mathematics: ");
+ int mathematics = input.nextInt();
+ System.out.print("Enter the marks in Physics: ");
+ int physics = input.nextInt();
+ int total = python + cProgramming + mathematics + physics;
+ double aggregate = total / 4.0;
+ System.out.println("Total= " + total);
+ System.out.println("Aggregate = " + aggregate);
+ if (aggregate > 75) {
+ System.out.println("DISTINCTION");
+ } else if (aggregate >= 60 && aggregate < 75) {
+ System.out.println("FIRST DIVISION");
+ } else if (aggregate >= 50 && aggregate < 60) {
+ System.out.println("SECOND DIVISION");
+ } else if (aggregate >= 40 && aggregate < 50) {
+ System.out.println("THIRD DIVISION");
+ } else {
+ System.out.println("FAIL");
+ }
+ }
+}
+
+
+
+
+
+
+4.
+import java.util.Scanner;
+public class AverageCalculator {
+ public static void main(String[] args) {
+ Scanner input = new Scanner(System.in);
+ int number;
+ int positiveSum = 0, positiveCount = 0;
+ int negativeSum = 0, negativeCount = 0;
+ System.out.println("Enter numbers. Enter -1 to exit.");
+ do {
+ System.out.print("Enter the number: ");
+ number = input.nextInt();
+ if (number > 0) {
+ positiveSum += number;
+ positiveCount++;
+ } else if (number < 0) {
+ negativeSum += number;
+ negativeCount++;
+ }
+ } while (number != -1);
+ if (positiveCount > 0) {
+ double positiveAverage = (double) positiveSum / positiveCount;
+ System.out.println("The average of positive numbers is: " + positiveAverage);
+ } else {
+ System.out.println("No positive numbers entered.");
+ }
+ if (negativeCount > 0) {
+ double negativeAverage = (double) negativeSum / negativeCount;
+ System.out.println("The average of negative numbers is: " + negativeAverage);
+ } else {
+ System.out.println("No negative numbers entered.");
+ }
+ input.close();
+ }
+
+
+
+
+
+
+5.
+import java.util.Scanner;
+public class CharacterCounter {
+ public static void main(String[] args) {
+ Scanner scanner = new Scanner(System.in);
+ int uppercaseCount = 0;
+ int lowercaseCount = 0;
+ int numberCount = 0;
+
+ System.out.println("Enter * to exit...");
+
+ char input;
+ do {
+ System.out.print("Enter any character: ");
+ input = scanner.next().charAt(0);
+
+ if (Character.isUpperCase(input)) {
+ uppercaseCount++;
+ } else if (Character.isLowerCase(input)) {
+ lowercaseCount++;
+ } else if (Character.isDigit(input)) {
+ numberCount++;
+ }
+ } while (input != '*');
+
+ System.out.println("Total count of lower case: " + lowercaseCount);
+ System.out.println("Total count of upper case: " + uppercaseCount);
+ System.out.println("Total count of numbers = " + numberCount);
+
+ scanner.close();
+ }
+}
