@@ -1,0 +1,96 @@
+1.
+import java.util.Scanner;
+public class FactorialCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the value of n: ");
+        int n = scanner.nextInt();
+        int factorial = calculateFactorial(n);
+        System.out.println("The factorial of " + n + " is: " + factorial);
+    }
+    public static int calculateFactorial(int n) {
+        if (n == 0) {
+            return 1;
+        } else {
+            return n * calculateFactorial(n - 1);
+        }
+    }
+}
+
+
+
+
+
+2.import java.util.Arrays;
+public class NthLargestNumber {
+    public static void main(String[] args) {
+        int[] arr = {14, 67, 48, 23, 5, 62};
+        int n = 4;
+        Arrays.sort(arr);
+        System.out.println(n + "th Largest number: " + arr[arr.length - n]);
+    }
+}
+
+
+
+
+3.import java.util.Scanner;
+public class BinaryToDecimalOctal {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a binary number: ");
+        String binaryString = scanner.nextLine();
+        int decimal = Integer.parseInt(binaryString, 2);
+        System.out.println("Decimal Number: " + decimal);
+        int decimalForOctal = Integer.parseInt(binaryString, 2);
+        String octalString = Integer.toOctalString(decimalForOctal);
+        System.out.println("Octal Number: " + octalString)
+        scanner.close();
+    }
+}
+
+
+
+
+
+
+4.public class SpecialCharactersCounter {
+    public static void main(String[] args) {
+        String statement = "Modi Birthday @ September 17, #&$% is the wishes code for him.";
+        int specialCharCount = 0;
+
+        for (int i = 0; i < statement.length(); i++) {
+            if (!Character.isLetterOrDigit(statement.charAt(i)) && !Character.isWhitespace(statement.charAt(i))) {
+                specialCharCount++;
+            }
+        }
+
+        System.out.println("Number of Special Characters: " + specialCharCount);
+    }
+}
+
+
+
+
+
+
+
+5.import java.util.*;
+public class RemoveDuplicatesFromArray {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of elements in the array: ");
+        int n = scanner.nextInt();
+        int[] arr = new int[n];
+        Set<Integer> uniqueElements = new HashSet<>();
+        for (int i = 0; i < n; i++) {
+            System.out.print("Enter element" + (i + 1) + ": ");
+            int num = scanner.nextInt();
+            arr[i] = num;
+            uniqueElements.add(num);
+        }
+        System.out.println("Non-duplicate items:");
+        System.out.println(uniqueElements);
+    }
+}
+
