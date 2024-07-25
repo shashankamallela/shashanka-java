@@ -1,0 +1,27 @@
+public class JavaLibsPractice {
+    public static void main(String[] args) {
+        String name = "shashanka";
+        int age = 25;
+        String color = "blue";
+        int favoriteNumber = 7;
+        double decimalNumber = 3.14;
+        String friendName = "Bob";
+        String city = "Paris";
+        String job = "software engineer";
+        int pets = 2;
+        double price = 49.99;
+        int ageIn5Years = age + 5;
+        double discountPrice = price * 0.9;
+        System.out.println("\nHere's your story:");
+        System.out.println("Once upon a time, there was a person named " + name + " who was " + age + " years old.");
+        System.out.println(name + " loved the color " + color + " and always carried a " + color + " item with them.");
+        System.out.println("One day, " + name + " decided to visit " + city + " with their best friend " + friendName + ".");
+        System.out.println("They dreamed of becoming a " + job + " and talked about it all the time.");
+        System.out.println("In " + city + ", they found a shop selling items for $" + price + ".");
+        System.out.println(name + " bought an item with a 10% discount, so the final price was $" + discountPrice + ".");
+        System.out.println(name + " had " + pets + " pets at home and couldn't wait to tell them all about the adventure.");
+        System.out.println("By the way, in 5 years, " + name + " will be " + ageIn5Years + " years old!");
+        System.out.println("And don't forget, " + name + "'s favorite number is " + favoriteNumber + " and they love " + decimalNumber + " as a decimal.");
+    }
+}
+9:25 pm
